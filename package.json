@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ladeirakelwin/to_do_app/issues"
   },
-  "homepage": "https://github.com/ladeirakelwin/to_do_app#readme"
+  "homepage": "https://github.com/ladeirakelwin/to_do_app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
