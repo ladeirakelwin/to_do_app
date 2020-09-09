@@ -1,6 +1,6 @@
 
 const page = (pessoa) => {
-    // const tasks = bd.map({tarefas} => tarefas)
+    
     const cards = () => {         
         return `
         <h1>${pessoa.titulo}</h1>
