@@ -1,16 +1,11 @@
-const page = () => {
-    const tasks = [
-        {'titulo': 'dentista',
-        'descricao': 'Ir ao dentista'}
-    ]
 
-    const cards = () => {
-        return tasks.reduce((card, {titulo,descricao}) =>  
-            card + `
-                <h1>${titulo}</h1>
-                <p>${descricao}</p><br>
-            `
-        ,``)
+const page = (pessoa) => {
+    // const tasks = bd.map({tarefas} => tarefas)
+    const cards = () => {         
+        return `
+        <h1>${pessoa.titulo}</h1>
+        <p>${pessoa.descricao}</p><br>
+        `
     }
 
     return `

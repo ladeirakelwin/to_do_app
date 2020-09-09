@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/ladeirakelwin/to_do_app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
