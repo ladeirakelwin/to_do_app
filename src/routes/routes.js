@@ -1,5 +1,5 @@
 const pages = require('../view/view')
-const bd = require('../database/database')
+const bd = require('../configs/database/database')
 require('sqlite3').verbose();
 
 module.exports = (app) => {
