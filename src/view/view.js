@@ -1,6 +1,5 @@
 
 const page = (pessoa) => {
-    
     const cards = () => {         
         return `
         <h1>${pessoa.titulo}</h1>
