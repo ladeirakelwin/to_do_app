@@ -10,6 +10,7 @@ const page = (tasks) => {
             <div class="card-body">
                 <h5 class="card-title">${titulo}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
+                <button type="submit" class="btn btn-default border-dark mt-3">Editar</button>
             </div>
         </div>
         `, ``)
@@ -41,6 +42,7 @@ const page = (tasks) => {
                             <textarea class="form-control" id="descricaoTarefa" rows="3" placeholder="Insira a descrição da tarefa"></textarea>
                         </div>
                     </form>
+                    <button type="submit" class="btn btn-primary">Criar tarefa</button>
                 </div>
             </div>
             <div class="d-flex row w-100 my-sm-5 justify-content-center">
