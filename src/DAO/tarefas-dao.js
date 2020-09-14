@@ -1,5 +1,3 @@
-const pages = require('../view/view')
-
 class TarefasDAO {
   constructor(db) {
     this._db = db;

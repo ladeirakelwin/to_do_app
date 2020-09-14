@@ -7,6 +7,7 @@ class TarefasController{
   geraTarefas(){
     return (req, res) => {
       const tarefasDAO = new TarefasDAO(db)
+      tarefasDAO
       .listar()
       .then((tasks) => {
         if(tasks.length > 0){
