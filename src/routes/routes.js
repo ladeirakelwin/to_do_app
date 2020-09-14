@@ -1,10 +1,5 @@
-const pages = require('../view/view')
-const bd = require('../configs/database/database')
-require('sqlite3').verbose();
-
+const TarefasController = require('../controllers/tarefas-controller')
+const tarefasController = new TarefasController()
 module.exports = (app) => {
-  app.get('/:id', (req, res) =>{
-    const pessoa = req.params.id
-    res.send(pages(...bd[0].tarefas))
-  })
+  app.get('/', tarefasController.geraTarefas())
 }

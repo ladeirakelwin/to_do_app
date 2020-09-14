@@ -1,10 +1,18 @@
+const page = (tasks) => {
 
-const page = (pessoa) => {
-    const cards = () => {         
-        return `
-        <h1>${pessoa.titulo}</h1>
-        <p>${pessoa.descricao}</p><br>
-        `
+    const cards = () => {
+        return tasks.reduce((acc, {
+                titulo,
+                descricao
+            }) => acc +
+            `
+        <div class="card shadow col-sm-3 mx-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${titulo}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
+            </div>
+        </div>
+        `, ``)
     }
 
     return `
@@ -35,7 +43,7 @@ const page = (pessoa) => {
                     </form>
                 </div>
             </div>
-            <div id="todoCard">
+            <div class="d-flex row w-100 my-sm-5 justify-content-center">
                 ${cards()}
             </div>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
