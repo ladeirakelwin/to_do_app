@@ -6,12 +6,14 @@ const page = (tasks) => {
                 descricao
             }) => acc +
             `
-        <div class="card shadow col-sm-3 mx-4" style="width: 18rem;">
+        <div class="card shadow col-sm-3 m-4" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${titulo}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
-                <button type="submit" class="btn btn-default border-dark mt-3">Editar</button>
-                <button type="submit" class="btn btn-primary">Criar tarefa</button>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-default border-dark">Editar</button>
+                    <button type="submit" class="btn btn-warning">Arquivar</button>
+                </div>
             </div>
         </div>
         `, ``)
