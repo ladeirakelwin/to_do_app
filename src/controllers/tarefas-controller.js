@@ -3,12 +3,15 @@ const pages = require('../view/view')
 const TarefasDAO = require('../DAO/tarefas-dao')
 
 
+
 class TarefasController{
-  geraTarefas(){
+  constructor(){
+  }
+
+  mostraTarefas(){
     return (req, res) => {
-      const tarefasDAO = new TarefasDAO(db)
-      tarefasDAO
-      .listar()
+      TarefasDAO
+      .list(db)
       .then((tasks) => {
         if(tasks.length > 0){
           res.send(pages(tasks))
@@ -17,6 +20,19 @@ class TarefasController{
       .catch(error => console.log(error))
     }
   }
+
+  geraTarefas(){
+    return (req, res) => {
+      TarefasDAO
+      .create(db, req.body.titulo,
+        req.body.descricao,
+        req.body)
+      .then(() => this.mostraTarefas())
+      .catch((err) => console.log(err))
+    }
+  }
+  
+
 }
 
 module.exports = TarefasController
