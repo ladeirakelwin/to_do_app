@@ -46,7 +46,7 @@ class TarefasController{
       TarefasDAO
       .update(db, req)
       .then(() => this.mostraTarefas())
-      .catch((err) => {erro: err})
+      .catch((err) => res.send({erro: err}))
     }
   }
 }

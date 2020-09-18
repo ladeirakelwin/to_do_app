@@ -2,7 +2,7 @@ class TarefasDAO {
 
   static list(db) {
     return new Promise((resolve, reject) => {
-      const sql = `SELECT * FROM TAREFAS;`
+      const sql = `SELECT * FROM TAREFAS WHERE STATUS <> "FILED";`
       db.all(sql, (err, tasks) => {
         if (err) {
           return reject(console.log(err));
@@ -34,7 +34,7 @@ class TarefasDAO {
   }
 
   static update(db, req) {
-    return Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const sql = `UPDATE TAREFAS SET TITULO = ?, DESCRICAO = ?, STATUS = ? WHERE ID = ?;`
       db.run(sql, [req.body.titulo,
         req.body.descricao,
@@ -43,6 +43,7 @@ class TarefasDAO {
       ], (err) => reject({
         erro: err
       }))
+      resolve()
     })
   }
 }
