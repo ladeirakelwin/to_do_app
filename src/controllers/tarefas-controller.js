@@ -17,7 +17,7 @@ class TarefasController{
           res.send(pages(tasks))
         }
       })
-      .catch(error => console.log(error))
+      .catch(error => (err) => {erro: err})
     }
   }
 
@@ -26,13 +26,29 @@ class TarefasController{
       TarefasDAO
       .create(db, req.body.titulo,
         req.body.descricao,
-        req.body)
+        req.body.status)
       .then(() => this.mostraTarefas())
-      .catch((err) => console.log(err))
+      .catch((err) => {erro: err})
     }
   }
-  
 
+  apagaTarefas(){
+    return (req, res) => {
+      TarefasDAO
+      .destroy(db, req.params.id)
+      .then(() => this.mostraTarefas())
+      .catch((err) => {erro: err} )
+    }
+  }
+
+  atualizaTarefas(){
+    return (req, res) => {
+      TarefasDAO
+      .update(db, req)
+      .then(() => this.mostraTarefas())
+      .catch((err) => {erro: err})
+    }
+  }
 }
 
 module.exports = TarefasController
