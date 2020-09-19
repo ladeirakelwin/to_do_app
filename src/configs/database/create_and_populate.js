@@ -23,17 +23,17 @@
 //        ('Pagar contas', 'Pagar boletos de água e luz', 'DOING')
 // `
 
-// db.serialize( ()=> {
-//     db.run(TAREFAS_SCHEMA, (err)=> {
-//         if (err) {
-//             console.log('Erro na criação da tabela tarefas');
-//             process.exit(1);
-//         }
-//     });
-//     db.run(ADD_TAREFAS, (err) => {
-//         if (err) {
-//             console.log('Erro ao adicionar valores ao banco');
-//             process.exit(1);
-//         }
-//     })
+// db.serialize(() => {
+//   db.run(TAREFAS_SCHEMA, (err) => {
+//     if (err) {
+//       console.log('Erro na criação da tabela tarefas');
+//       process.exit(1);
+//     }
+//   });
+//   db.run(ADD_TAREFAS, (err) => {
+//     if (err) {
+//       console.log('Erro ao adicionar valores ao banco');
+//       process.exit(1);
+//     }
+//   })
 // })
