@@ -1,6 +1,7 @@
 const db = require('../configs/database/db')
 const pages = require('../view/view')
 const TarefasDAO = require('../DAO/tarefas-dao')
+const app = require('../custom-express')
 
 
 
@@ -23,12 +24,11 @@ class TarefasController{
 
   geraTarefas(){
     return (req, res) => {
+      console.log(req.body)
       TarefasDAO
-      .create(db, req.body.titulo,
-        req.body.descricao,
-        req.body.status)
-      .then(() => this.mostraTarefas())
-      .catch((err) => {erro: err})
+      .create(db, req)
+      .then(() =>  res.send({"sadlkdas":"asdasdas"}))
+      .catch((err) => {{ok: err}})
     }
   }
 

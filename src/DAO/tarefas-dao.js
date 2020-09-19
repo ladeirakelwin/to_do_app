@@ -12,10 +12,13 @@ class TarefasDAO {
     })
   }
 
-  static create(db, ...values) {
+  static create(db, req) {
     return new Promise((resolve, reject) => {
       const sql = `INSERT INTO TAREFAS(TITULO, DESCRICAO, STATUS) VALUES (?,?,?);`
-      db.run(sql, values, (err) => reject({
+      console.log(req.body)
+      db.run(sql, [req.body.titulo,
+        req.body.descricao,
+        req.body.status], (err) => reject({
         erro: err
       }))
       resolve()
