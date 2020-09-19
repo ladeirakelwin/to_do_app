@@ -44,7 +44,9 @@ const page = (tasks) => {
                         <div class="form-group">
                             <label for="descricaoTarefa"><b>Descrição:</b></label>
                             <textarea class="form-control" id="descricaoTarefa" rows="3" placeholder="Insira a descrição da tarefa"></textarea>
-                            <button class="btn btn-primary adicionar mt-3">Adicionar</button
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary adicionar ">Adicionar</button>
                         </div>
                     </form>
                     
