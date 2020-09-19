@@ -26,9 +26,9 @@ arquivar.forEach((arquivo, index) => {
         }
 
         // console.log(`http://localhost:3000/${idButton}`)
-        const endPoint = `http://localhost:3000/${idButton}`
-        fetch(endPoint, request)
-          .then(res => res.json())
+        const endPoint = `http://localhost:3000/`
+        fetch(endPoint)
+          .then(res => res)
           .then(json => console.log(json))
           }
       })
