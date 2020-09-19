@@ -34,8 +34,8 @@ const page = (tasks) => {
             <nav class="nav bg-dark mb-4" style="text-align: center;">
                 <h1 class=" py-2 text-light" style="font-family: 'Indie Flower'; width:100%">TODO app</h1>
             </nav>
-            <div class="d-flex justify-content-center">
-                <div class="w-50 p-4 border rounded shadow-sm"> 
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <div class="w-50 p-4 border rounded shadow-sm justify-content-center"> 
                     <form class="flex-fill">
                         <div class="form-group">
                             <label for="tituloTarefa"><b>Título:</b></label>
@@ -44,12 +44,13 @@ const page = (tasks) => {
                         <div class="form-group">
                             <label for="descricaoTarefa"><b>Descrição:</b></label>
                             <textarea class="form-control" id="descricaoTarefa" rows="3" placeholder="Insira a descrição da tarefa"></textarea>
+                            <button class="btn btn-primary adicionar">Adicionar</button
                         </div>
                     </form>
                     
                 </div>
             </div>
-            <div class="d-flex row w-100 my-sm-5 justify-content-center">
+            <div class="d-flex row  justify-content-center">
                 ${cards()}
             </div>
             <script src="../../script.js"></script>
