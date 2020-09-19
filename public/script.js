@@ -1,3 +1,6 @@
+const deletar = document.querySelectorAll('.deletar')
+
+
 const adicionar = document.querySelector('.adicionar')
 const titulo = document.querySelector('#tituloTarefa')
 const descricao = document.querySelector('#descricaoTarefa')
@@ -24,6 +27,23 @@ requestWithBody = (method, titulo, descricao, status) => {
     })
   }
 }
+
+deletar.forEach((deleta, index) => {
+  deleta.onclick = () => {
+    const idClass = deleta.classList.item(4).split("-")
+    const id = idClass[1]
+    console.log(id)
+  
+    fetch(`http://localhost:3000/${id}`, {
+      method: "DELETE",
+      headers: { 
+      },
+      mode: 'cors',
+      cache: 'default',
+    }).then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
+})
 
 
 adicionar.onclick = (event) => {

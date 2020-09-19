@@ -35,8 +35,8 @@ class TarefasController{
   apagaTarefas(){
     return (req, res) => {
       TarefasDAO
-      .destroy(db, req.params.id)
-      .then(() => this.mostraTarefas())
+      .destroy(db, req)
+      .then(() => res.send("Foi"))
       .catch((err) => {erro: err} )
     }
   }

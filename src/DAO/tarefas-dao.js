@@ -26,10 +26,10 @@ class TarefasDAO {
 
   }
 
-  static destroy(db, id) {
+  static destroy(db, req) {
     return new Promise((resolve, reject) => {
       const sql = `DELETE FROM TAREFAS WHERE ID = ?;`
-      db.run(sql, [id], (err) => reject({
+      db.run(sql, [req.params.id], (err) => reject({
         erro: err
       }))
       resolve()

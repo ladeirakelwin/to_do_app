@@ -12,7 +12,7 @@ const page = (tasks) => {
                 <h5 class="card-title">${titulo}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-default border-dark editar">Editar</button>
+                    <button type="submit" class="btn btn-default border-dark deletar id-${id}">Deletar</button>
                     <button type="submit" class="btn btn-warning arquivar id-${id}">Arquivar</button>
                 </div>
             </div>
