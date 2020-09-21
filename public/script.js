@@ -34,14 +34,14 @@ deletar.forEach((deleta, index) => {
     const id = idClass[1]
     console.log(id)
   
-    fetch(`http://localhost:3000/${id}`, {
-      method: "DELETE",
-      headers: { 
-      },
-      mode: 'cors',
-      cache: 'default',
-    }).then(res => console.log(res))
-    .catch(err => console.log(err))
+    // fetch(`http://localhost:3000/${id}`, {
+    //   method: "DELETE",
+    //   headers: { 
+    //   },
+    //   mode: 'cors',
+    //   cache: 'default',
+    // }).then(res => console.log(res))
+    // .catch(err => console.log(err))
   }
 })
 
