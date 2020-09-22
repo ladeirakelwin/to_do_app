@@ -8,12 +8,12 @@ const page = (tasks) => {
             }) => acc +
             `
         <div class="card shadow col-sm-3 m-4" style="width: 18rem;">
-            <div class="card-body">
+            <div class="card-body" data-id-tarefa="${id}">
                 <h5 class="card-title">${titulo}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-default border-dark deletar id-${id}">Deletar</button>
-                    <button type="submit" class="btn btn-warning arquivar id-${id}">Arquivar</button>
+                    <button type="submit" class="btn btn-default border-dark deletar" >Deletar</button>
+                    <button type="submit" class="btn btn-warning arquivar" data-set="${id}">Arquivar</button>
                 </div>
             </div>
         </div>

@@ -36,8 +36,8 @@ class TarefasController{
     return (req, res) => {
       TarefasDAO
       .destroy(db, req)
-      .then(() => res.send("Foi"))
-      .catch((err) => {erro: err} )
+      .then(() => res.send(true))
+      .catch((err) => res.send(false) )
     }
   }
 

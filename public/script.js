@@ -29,19 +29,18 @@ requestWithBody = (method, titulo, descricao, status) => {
 }
 
 deletar.forEach((deleta, index) => {
-  deleta.onclick = () => {
-    const idClass = deleta.classList.item(4).split("-")
-    const id = idClass[1]
-    console.log(id)
-  
-    // fetch(`http://localhost:3000/${id}`, {
-    //   method: "DELETE",
-    //   headers: { 
-    //   },
-    //   mode: 'cors',
-    //   cache: 'default',
-    // }).then(res => console.log(res))
-    // .catch(err => console.log(err))
+  deleta.onclick = (event) => {
+    const id = event.target.parentNode.parentNode.dataset.idTarefa
+    const element = event.target.parentNode.parentNode.parentNode
+    console.log(element)
+    fetch(`http://localhost:3000/${id}`, {
+      method: "DELETE",
+      headers: { 
+      },
+      mode: 'cors',
+      cache: 'default',
+    }).then(res => (res)? element.remove(): alert(`Não foi possível remover o objeto com id = ${id}`) )
+    .catch(err => console.log(err))
   }
 })
 
