@@ -27,7 +27,7 @@ class TarefasController{
       console.log(req.body)
       TarefasDAO
       .create(db, req)
-      .then(() =>  res.send({"sadlkdas":"asdasdas"}))
+      .then(() =>  res.redirect("/"))
       .catch((err) => {{ok: err}})
     }
   }

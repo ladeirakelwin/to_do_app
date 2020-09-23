@@ -13,7 +13,7 @@ const page = (tasks) => {
                 <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
                 <div class="mt-3">
                     <button type="submit" class="btn btn-default border-dark deletar" >Deletar</button>
-                    <button type="submit" class="btn btn-warning arquivar" data-set="${id}">Arquivar</button>
+                    <button type="submit" class="btn btn-warning editar" data-set="${id}">Arquivar</button>
                 </div>
             </div>
         </div>
@@ -36,19 +36,23 @@ const page = (tasks) => {
             </nav>
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <div class="w-50 p-4 border rounded shadow-sm justify-content-center"> 
-                    <form class="flex-fill">
+                    <form class="flex-fill" action="/tarefas" method="POST">
+                    
+                    <!-- <input type="hidden" placeholder="Título da tarefa" name="_method" value="null">
+                        <input type="hidden" placeholder="Título da tarefa"> -->
+                    
                         <div class="form-group">
                             <label for="tituloTarefa"><b>Título:</b></label>
-                            <input type="text" class="form-control" id="tituloTarefa" placeholder="Título da tarefa">
+                            <input type="text" class="form-control" id="tituloTarefa" name="titulo" placeholder="Título da tarefa">
                         </div>
                         <div class="form-group">
                             <label for="descricaoTarefa"><b>Descrição:</b></label>
-                            <textarea class="form-control" id="descricaoTarefa" rows="3" placeholder="Insira a descrição da tarefa"></textarea>
+                            <textarea class="form-control" id="descricaoTarefa" rows="3" name="descricao" placeholder="Insira a descrição da tarefa"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="statusTarefa"><b>Status:</b></label>
-                            <input type="text" class="form-control" id="statusTarefa" placeholder="Status da tarefa">
+                            <input type="text" name="status" class="form-control" id="statusTarefa" placeholder="Status da tarefa">
                         </div>
 
                         <div class="form-group">
