@@ -13,7 +13,7 @@ const page = (tasks) => {
                 <h6 class="card-subtitle mb-2 text-muted">${descricao}</h6>
                 <div class="mt-3">
                     <button type="submit" class="btn btn-default border-dark deletar" >Deletar</button>
-                    <button type="submit" class="btn btn-warning editar" data-set="${id}">Arquivar</button>
+                    <button type="submit" class="btn btn-warning editar" >Editar</button>
                 </div>
             </div>
         </div>
@@ -38,8 +38,8 @@ const page = (tasks) => {
                 <div class="w-50 p-4 border rounded shadow-sm justify-content-center"> 
                     <form class="flex-fill" action="/tarefas" method="POST">
                     
-                    <!-- <input type="hidden" placeholder="Título da tarefa" name="_method" value="null">
-                        <input type="hidden" placeholder="Título da tarefa"> -->
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" class="inputTarefa" name="idTarefa" value="null">
                     
                         <div class="form-group">
                             <label for="tituloTarefa"><b>Título:</b></label>

@@ -42,7 +42,7 @@ class TarefasDAO {
       db.run(sql, [req.body.titulo,
         req.body.descricao,
         req.body.status,
-        req.params.id
+        req.body.idTarefa
       ], (err) => reject({
         erro: err
       }))

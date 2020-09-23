@@ -43,9 +43,10 @@ class TarefasController{
 
   atualizaTarefas(){
     return (req, res) => {
+      console.log()
       TarefasDAO
       .update(db, req)
-      .then(() => this.mostraTarefas())
+      .then(() => res.redirect('/'))
       .catch((err) => res.send({erro: err}))
     }
   }

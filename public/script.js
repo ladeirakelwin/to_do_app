@@ -1,5 +1,6 @@
 const deletar = document.querySelectorAll('.deletar')
-
+const editar = document.querySelectorAll('.editar')
+const iT = document.querySelector('.inputTarefa')
 
 const adicionar = document.querySelector('.adicionar')
 const titulo = document.querySelector('#tituloTarefa')
@@ -28,10 +29,23 @@ requestWithBody = (method, titulo, descricao, status) => {
   }
 }
 
+editar.forEach((edita) => {
+  edita.onclick = (event) => {
+    const id = event.target.parentNode.parentNode.dataset.idTarefa
+    const desc = edita.parentNode.previousSibling.previousSibling.textContent
+    const title = edita.parentNode.parentNode.firstChild.nextSibling.textContent
+    iT.value = id
+    titulo.value = title
+    descricao.value = desc   
+
+    console.log(title, desc)
+    
+  }
+})
+
 deletar.forEach((deleta, index) => {
   deleta.onclick = (event) => {
     const id = event.target.parentNode.parentNode.dataset.idTarefa
-    const element = event.target.parentNode.parentNode.parentNode
     console.log(element)
     fetch(`http://localhost:3000/${id}`, {
       method: "DELETE",
