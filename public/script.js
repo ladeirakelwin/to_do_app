@@ -52,7 +52,6 @@ deletar.forEach((deleta, index) => {
       method: "DELETE",
       headers: { 
       },
-      mode: 'cors',
       cache: 'default',
     }).then(res => (res)? element.remove(): alert(`Não foi possível remover o objeto com id = ${id}`) )
     .catch(err => console.log(err))
