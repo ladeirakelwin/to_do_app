@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const app = express()
 
+app.use(cors())
 app.use('/static', express.static(__dirname + '/../public'));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride(function (req, res) {
