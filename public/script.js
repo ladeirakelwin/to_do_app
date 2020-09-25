@@ -48,7 +48,7 @@ deletar.forEach((deleta, index) => {
     const id = event.target.parentNode.parentNode.dataset.idTarefa
     const element = event.target.parentNode.parentNode.parentNode
     console.log(element)
-    fetch(`http://localhost:3000/${id}`, {
+    fetch(`/${id}`, {
       method: "DELETE",
       headers: { 
       },
